@@ -252,6 +252,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Logs\UmbracoTraceLog.LAPTOP-FS6CRE8R.txt" />
+    <Content Include="App_Data\TEMP\ClientDependency\LAPTOP-FS6CRE8R-15240f3e2ab5d16406a6f695b2af57e1-map.xml" />
+    <Content Include="App_Data\TEMP\DistCache\LMW3SVC2ROOT-lastsynced.txt" />
     <Content Include="config\imageprocessor\security.config" />
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
@@ -320,6 +323,21 @@
     <Content Include="obj\Debug\stas.csproj.CopyComplete" />
     <Content Include="obj\Debug\stas.csproj.CoreCompileInputs.cache" />
     <Content Include="obj\Debug\stas.csprojResolveAssemblyReference.cache" />
+    <Content Include="App_Data\Logs\UmbracoTraceLog.LAPTOP-FS6CRE8R.txt.2018-05-09" />
+    <Content Include="App_Data\Logs\UmbracoTraceLog.LAPTOP-FS6CRE8R.txt.2018-05-10" />
+    <Content Include="App_Data\Logs\UmbracoTraceLog.LAPTOP-FS6CRE8R.txt.2018-05-11" />
+    <Content Include="App_Data\packages\installed\installedPackages.config" />
+    <Content Include="App_Data\TEMP\ClientDependency\1_71e4e1e4a4ea42d6b4aac1e324197358.cdC" />
+    <Content Include="App_Data\TEMP\ClientDependency\1_e85f9e5918e64a1c97614df54aaa539b.cdJ" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\segments.gen" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\segments_1" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\segments.gen" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\segments_1" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\segments.gen" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\segments_1" />
+    <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.LAPTOP-FS6CRE8R.hash" />
+    <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.LAPTOP-FS6CRE8R.list" />
+    <Content Include="App_Data\umbraco.config" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -2153,8 +2171,11 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\Models\" />
     <Folder Include="App_Data\NuGetBackup\20180509-111815\Umbraco\" />
     <Folder Include="App_Data\NuGetBackup\20180509-111815\Umbraco_Client\" />
+    <Folder Include="App_Data\packages\created\" />
+    <Folder Include="App_Data\TEMP\Install\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>
