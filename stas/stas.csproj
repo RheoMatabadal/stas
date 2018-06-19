@@ -260,6 +260,9 @@
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="corporate.html" />
     <Content Include="css\animated-scroll-anchor.css" />
     <Content Include="css\hover-min.css" />
@@ -267,6 +270,7 @@
     <Content Include="css\style.css" />
     <Content Include="events.html" />
     <Content Include="film.html" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="graphic.html" />
     <Content Include="img\aboutBanner.jpg" />
     <Content Include="img\abt_corporate.jpg" />
@@ -410,16 +414,25 @@
     <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.LAPTOP-FS6CRE8R.hash" />
     <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.LAPTOP-FS6CRE8R.list" />
     <Content Include="App_Data\umbraco.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
     <Content Include="portfolio.html" />
     <Content Include="portfolioDetail.html" />
     <Content Include="scripts\animated-scroll-anchor.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\custom.js" />
+    <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\jquery-1.10.2.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\jquery.bxslider.js" />
     <Content Include="scripts\jquery.bxslider.min.js" />
     <Content Include="scripts\jquery.fitvids.js" />
     <Content Include="scripts\jquery.min.js" />
     <Content Include="scripts\jqueryfittext.js" />
+    <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="scripts\scrolldown.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -601,6 +614,11 @@
     <Content Include="Views\GraphicDesignItem.cshtml" />
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Master.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Partials\SiteLayout\_Footer.cshtml" />
+    <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Portfolio.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
