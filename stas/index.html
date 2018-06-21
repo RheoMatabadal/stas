@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -17,7 +17,7 @@
 
  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
  <script src="scripts/jquery.fittext.js"></script>
-  <script src="script/jquery.bxslider.min.js"></script>
+  <script src="scripts/jquery.bxslider.min.js"></script>
   <link href="css/jquery.bxslider.css" rel="stylesheet"/>
      <link href="css/animated-scroll-anchor.css" rel="stylesheet">
 
@@ -30,7 +30,7 @@
   
 
   </head>
-<div class="vl"  onclick="openArt()">
+<div class="vl" id="vl" onclick="openArt()">
   <p>FEATURED ARTIST: KATHLEEN HOGENBOOM</p>
 </div>
   <section id="artist">
@@ -38,7 +38,7 @@
   <div class="container-fluid-no-pad">
     <div class="row no-pad">
     
-<div class="col-md-1 col-sm-3 col-xs-3">
+<div class="col-md-1 col-sm-12 col-xs-12">
     
 
 <div class="slider-nav">
@@ -55,7 +55,7 @@
 </div>
 </div>
 
-<div class="col-md-9 col-sm-9 col-xs-9">
+<div class="col-md-9 col-sm-12 col-xs-12">
 <div class="slider-for no-pad">
   
     <img src="http://www.planwallpaper.com/static/images/kartandtinki1_photo-wallpapers_02.jpg" alt="image"  />
@@ -135,8 +135,8 @@
         <div class="col-md-4 col-md-offset-2">
            <div class="scroll-down">
                 
-              <a class="ct-btn-scroll ct-js-btn-scroll scroll-a hvr-sink" href="#about"></a>
-              <p class="leer-ons-kennen">scroll down</p>  
+              <a class="ct-btn-scroll ct-js-btn-scroll scroll-a hvr-sink whitener" href="#about"></a>
+              <p>SCROLL DOWN</p>  
             </div>
      </div>
    </div>
@@ -151,17 +151,6 @@
 
    <section id="about">
 
-  <div class="container">
-<div class="row">
-<div class="col-md-1 menu-box">
-<span style="font-size:30px;cursor:pointer" onclick="openNav()"> &#9868;</span>
-<p>menu</p>
-</div>
-</div>
-</div>
-<div class="tagline">
-<img src="img/stasTagLine.jpg">
-</div>
      <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -368,7 +357,26 @@
   </div>
 </div>
 </section>
-  
+   <section id="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-11 col-sm-8 year col-xs-8 year">
+          
+           <p> <script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script>&copy; STAS INTERNATIONAL.<p>
+         
+          </div>
+          <div class="col-md-1 col-sm-4 col-xs-4 year">
+            
+              <i class="fas fa-envelope-square space-social-icons"></i>
+              <i class="fas fa-phone-square space-social-icons"></i>
+              <i class="fab fa-facebook-square space-social-icons"></i>
+              <i class="fab fa-vimeo-square space-social-icons"></i>
+          </div>
+          
+        
+      </div>
+    </div>
+    </section>
   <script>
 
 </script>
