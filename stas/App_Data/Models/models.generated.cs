@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "2e179bd36f1eb32d")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "e2c639e30b4f68f7")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -146,32 +146,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 	}
 
-	/// <summary>Coporate Identity Item</summary>
-	[PublishedContentModel("coporateIdentityItem")]
-	public partial class CoporateIdentityItem : CorporateIdentities
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "coporateIdentityItem";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public CoporateIdentityItem(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CoporateIdentityItem, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-	}
-
 	/// <summary>Graphic Design</summary>
 	[PublishedContentModel("graphicDesign")]
 	public partial class GraphicDesign : Master
@@ -193,32 +167,6 @@ namespace Umbraco.Web.PublishedContentModels
 #pragma warning restore 0109
 
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<GraphicDesign, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-	}
-
-	/// <summary>Graphic Design Item</summary>
-	[PublishedContentModel("graphicDesignItem")]
-	public partial class GraphicDesignItem : GraphicDesign
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "graphicDesignItem";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public GraphicDesignItem(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<GraphicDesignItem, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
@@ -250,32 +198,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 	}
 
-	/// <summary>Film Video Entry</summary>
-	[PublishedContentModel("filmVideoEntry")]
-	public partial class FilmVideoEntry : FilmVideo
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "filmVideoEntry";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public FilmVideoEntry(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FilmVideoEntry, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-	}
-
 	/// <summary>Events</summary>
 	[PublishedContentModel("events")]
 	public partial class Events : Master
@@ -297,32 +219,6 @@ namespace Umbraco.Web.PublishedContentModels
 #pragma warning restore 0109
 
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Events, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-	}
-
-	/// <summary>Event Item</summary>
-	[PublishedContentModel("eventItem")]
-	public partial class EventItem : Events
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "eventItem";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public EventItem(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<EventItem, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}

@@ -618,7 +618,6 @@
     <Content Include="Views\Partials\SiteLayout\_Artist.cshtml" />
     <Content Include="Views\Partials\SiteLayout\_Menu.cshtml" />
     <Content Include="Views\Partials\SiteLayout\_STASTagline.cshtml" />
-    <Content Include="Views\Partials\SiteLayout\_ContactModal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
