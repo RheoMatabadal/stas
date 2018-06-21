@@ -600,15 +600,10 @@
     <Content Include="Umbraco\Webservices\TreeDataService.ashx" />
     <Content Include="Umbraco\Xslt\Web.config" />
     <Content Include="Views\AboutUs.cshtml" />
-    <Content Include="Views\Contact.cshtml" />
-    <Content Include="Views\CoporateIdentityItem.cshtml" />
     <Content Include="Views\CorporateIdentities.cshtml" />
-    <Content Include="Views\EventItem.cshtml" />
     <Content Include="Views\Events.cshtml" />
     <Content Include="Views\FilmVideo.cshtml" />
-    <Content Include="Views\FilmVideoEntry.cshtml" />
     <Content Include="Views\graphicDesign.cshtml" />
-    <Content Include="Views\GraphicDesignItem.cshtml" />
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Master.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -2289,6 +2284,7 @@
     <Folder Include="App_Data\TEMP\Install\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Views\MacroPartials\" />
+    <Folder Include="Views\Partials\Content\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

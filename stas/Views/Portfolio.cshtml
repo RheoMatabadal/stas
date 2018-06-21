@@ -1,7 +1,174 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
 }
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<section id="portfolio_banner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-offset-1">
+                <div class="card">
+                    <div class="card-body card-white">
+                        <h1 class="card-title">Portfolio</h1>
+                    </div>
+                </div>
 
-@* the fun starts here *@
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 col-sm-offset-1">
+                <div class="card">
+                    <div class="card-body card-dark">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">HOME</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">PORTFOLIO</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<nav class="navbar navbar-inverse border">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="button active" data-filter="all"><a>Alles</a></li>
+            <li class="button" data-filter="corporateIdentity"><a>Corporate Identity</a></li>
+            <li class="button" data-filter="graphicDesign"><a>Graphic Design</a></li>
+            <li class="button" data-filter="filmVideo"><a>Film/Video</a></li>
+            <li class="button" data-filter="Events"><a>Events</a></li>
+        </ul>
+    </div>
+</nav>
+<section id="portfolio-items">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-6 gallery filter corporateIdentity moreBox imager">
+                <img class="img-fluid" src="~/img/borgoe.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter corporateIdentity moreBox imager">
+                <img class="img-fluid" src="~/img/belasting.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter graphicDesign moreBox  imager">
+                <img class="img-fluid" src="~/img/fatum.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter filmVideo moreBox  imager">
+                <img class="img-fluid" src="~/img/afobakka.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter Events moreBox  imager">
+                <img class="img-fluid" src="~/img/hermitage.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter Events moreBox  imager">
+                <img class="img-fluid" src="~/img/kirpalani.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter Events moreBox  imager">
+                <img class="img-fluid" src="~/img/borgoe.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter filmVideo moreBox  imager">
+                <img class="img-fluid" src="~/img/belasting.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter filmVideo moreBox  imager">
+                <img class="img-fluid" src="~/img/fatum.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter graphicDesign moreBox  imager">
+                <img class="img-fluid" src="~/img/afobakka.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter filmvideo moreBox imager ">
+                <img class="img-fluid" src="~/img/hermitage.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+            <div class="col-md-6 gallery filter graphicDesign moreBox ">
+                <img class="img-fluid " src="~/img/kirpalani.jpg" style="width:100%;" />
+                <div class="overlay2">
+                    <h1 class="port-title">test</h1>
+                    <h3 class="port-cat">Coporate Identitys</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid-no-pad">
+        <div class="row">
+            <div class="col-md-12 gallery">
+                <div id="loadMore">
+                    <a href="#" class="loadMore">LOAD MORE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="adres">
+                    <center>  <i class="fas fa-home"></i></center>
+                    <p> DR.J.F.NASSYLAAN 43, PARAMARIBO,SURINAME</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="telefoon">
+                    <center>  <i class="fas fa-phone"></i></center>
+                    <p> +597 521262,+597 521263</p>
+                </div>
+
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="bericht">
+                    <center><i class="fab fa-telegram-plane"></i></center>
+                    <p>INFO@STASINTERNATIONAL.COM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
 

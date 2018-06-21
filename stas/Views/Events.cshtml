@@ -1,5 +1,244 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Events>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
 }
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<section id="event_banner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-offset-1">
+                <div class="card">
+                    <div class="card-body card-white">
+                        <h1 class="card-title">Events</h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6 col-sm-offset-1">
+                <div class="card">
+                    <div class="card-body card-dark">
+                        <h2 class="card-title">Good fortune is what happens when oppertunity meets with planning. </h2>
+                        <h4 class="card-title">- Thomas Edison</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8-offset-2">
+            <h1 class="event-text">We make your event, <br> the one people will remember</h1>
+        </div>
+        <br>
+        <div class="col-md-10-offset-1">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores iste rerum sit facilis voluptas neque deleniti, assumenda laudantium eaque nobis similique odio maiores nostrum delectus beatae accusamus nihil id dolorem?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, tempore, nesciunt! Necessitatibus quam quisquam autem, voluptate aliquam quaerat, consequatur adipisci voluptatem iste blanditiis, molestias corporis temporibus, ducimus consequuntur qui reiciendis.</p>
+        </div>
+    </div>
+</div>
+
+<!-- charts -->
+<script>
+          $(document).ready(function(){
+  var ctx = $("#canvasLogistiek").get(0).getContext("2d");
+  var data = [
+  {
+    value: 100,
+    color: "#eeeeee",
+    highlight: "grey",
+    label: "Logistiek"
+  }
+  ];
+  var chart = new Chart(ctx).Doughnut(data);
+});
+           $(document).ready(function(){
+  var ctx = $("#canvasConcept").get(0).getContext("2d");
+  var data = [
+  {
+    value: 100,
+    color: "#eeeeee",
+    highlight: "grey",
+    label: "Concept"
+  }
+  ];
+  var chart = new Chart(ctx).Doughnut(data);
+});
+            $(document).ready(function(){
+  var ctx = $("#canvasPers").get(0).getContext("2d");
+  var data = [
+  {
+    value: 100,
+    color: "#eeeeee",
+    highlight: "grey",
+    label: "Pers"
+  }
+  ];
+  var chart = new Chart(ctx).Doughnut(data);
+});
+</script>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-2 col-md-offset-1">
+            <img src="~/img/logistiek.png" class="img-responsive">
+
+
+            <h2 class="under-chart-text">Logistiek</h2>
+            <center><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque adipisci id perspiciatis veniam magnam! Numquam incidunt placeat eos cum. Beatae perspiciatis officiis sint harum voluptatibus, est quam laborum labore. Nulla.</p></center>
+        </div>
+        <div class="col-md-2 col-md-offset-2">
+            <img src="~/img/concept.png" class="img-responsive">
+
+            </canvas>
+
+
+
+            <h2 class="under-chart-text2">Concept</h2>
+            <center><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque adipisci id perspiciatis veniam magnam! Numquam incidunt placeat eos cum. Beatae perspiciatis officiis sint harum voluptatibus, est quam laborum labore. Nulla.</p></center>
+        </div>
+        <div class="col-md-2 col-md-offset-2">
+            <img src="~/img/pers.png" class="img-responsive">
+
+
+            <h2 class="under-chart-text2">Pers</h2>
+            <center><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque adipisci id perspiciatis veniam magnam! Numquam incidunt placeat eos cum. Beatae perspiciatis officiis sint harum voluptatibus, est quam laborum labore. Nulla.</p></center>
+        </div>
+    </div>
+</div>
+
+
+
+       </div>
+
+
+<br>
+<section id="gallery">
+    <div class="container-fluid gallery">
+        <div class="row no-pad gallery">
+            <div class="col-md-6  ">
+                <div class="col-md-6 gallery">
+                    <img class="img-responsive hvr-grow-rotate" src="~/img/eventsTok.jpg" />
+                </div>
+                <div class="col-md-6 gallery">
+                    <img class="img-responsive hvr-grow-rotate" src="~/img/eventsBacardi.jpg" />
+                </div>
+                <div class="row no-pad">
+                    <div class="col-md-6 gallery">
+                        <img class="img-responsive hvr-grow-rotate" src="~/img/eventsStaatsolie.jpg" />
+                    </div>
+                    <div class="col-md-6 gallery">
+                        <img class="img-responsive hvr-grow-rotate" src="~/img/eventsHel.jpg" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 no-pad gallery">
+                <div class="col-md-12 gallery">
+                    <img class="img-responsive hvr-grow-rotate" src="~/img/eventsPink.jpg" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+
+    </div>
+</section>
+<section id="quote-slider">
+    <div class="container-fluid">
+        <div class="row">
+            <div class='col-md-12 text-center'>
+
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-12-modified'>
+                <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+                    <!-- Bottom Carousel Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#quote-carousel" data-slide-to="1"></li>
+                        <li data-target="#quote-carousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Carousel Slides / Quotes -->
+                    <div class="carousel-inner">
+
+                        <!-- Quote 1 -->
+                        <div class="item active">
+
+                            <blockquote>
+                                <div class="row box-white">
+
+                                    <div class="col-sm-9">
+                                        <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit!</p>
+                                        <small class="author">Someone famous</small>
+                                    </div>
+                                </div>
+                            </blockquote>
+
+                        </div>
+                        <!-- Quote 2 -->
+                        <div class="item">
+                            <blockquote>
+                                <div class="row box-white">
+
+                                    <div class="col-sm-9">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor nec lacus ut tempor. Mauris.</p>
+                                        <small class="author">Someone famous</small>
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <!-- Quote 3 -->
+                        <div class="item">
+                            <blockquote>
+                                <div class="row box-white">
+                                    <div class="col-sm-9">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rutrum elit in arcu blandit, eget pretium nisl accumsan. Sed ultricies commodo tortor, eu pretium mauris.</p>
+                                        <small class="author">Someone famous</small>
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Buttons Next/Prev -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="adres">
+                    <center>  <i class="fas fa-home"></i></center>
+                    <p> DR.J.F.NASSYLAAN 43, PARAMARIBO,SURINAME</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="telefoon">
+                    <center>  <i class="fas fa-phone"></i></center>
+                    <p> +597 521262,+597 521263</p>
+                </div>
+
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="bericht">
+                    <center><i class="fab fa-telegram-plane"></i></center>
+                    <p>INFO@STASINTERNATIONAL.COM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
