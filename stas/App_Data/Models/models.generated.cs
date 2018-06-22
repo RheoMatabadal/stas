@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "45e8451faee2d7c4")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "13de1cb6f5067cbb")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -92,11 +92,83 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// about images: foto #1 om te tonen op de about sectie van de homepagina
+		///</summary>
+		[ImplementPropertyType("aboutImages")]
+		public IEnumerable<IPublishedContent> AboutImages
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("aboutImages"); }
+		}
+
+		///<summary>
+		/// About Text: text onder de about title op de about sectie van de home pagina
+		///</summary>
+		[ImplementPropertyType("aboutText")]
+		public string AboutText
+		{
+			get { return this.GetPropertyValue<string>("aboutText"); }
+		}
+
+		///<summary>
+		/// About Title: title op de about us sectie van de home pagina
+		///</summary>
+		[ImplementPropertyType("aboutTitle")]
+		public string AboutTitle
+		{
+			get { return this.GetPropertyValue<string>("aboutTitle"); }
+		}
+
+		///<summary>
+		/// Contact Adres: Adres veld op de contact banner van de homepagina
+		///</summary>
+		[ImplementPropertyType("contactAdres")]
+		public string ContactAdres
+		{
+			get { return this.GetPropertyValue<string>("contactAdres"); }
+		}
+
+		///<summary>
+		/// Contact Email: Email op de contactbox van de homepagina
+		///</summary>
+		[ImplementPropertyType("contactEmail")]
+		public string ContactEmail
+		{
+			get { return this.GetPropertyValue<string>("contactEmail"); }
+		}
+
+		///<summary>
+		/// Contact Telefoon: Telefoon nummer op de de contact box van de homepagina
+		///</summary>
+		[ImplementPropertyType("contactTelefoon")]
+		public string ContactTelefoon
+		{
+			get { return this.GetPropertyValue<string>("contactTelefoon"); }
+		}
+
+		///<summary>
+		/// Contact Title: Title op de contact box op de home pagina
+		///</summary>
+		[ImplementPropertyType("contactTitle")]
+		public string ContactTitle
+		{
+			get { return this.GetPropertyValue<string>("contactTitle"); }
+		}
+
+		///<summary>
+		/// HomeBannerText: Bouncy text op de homepagina
+		///</summary>
+		[ImplementPropertyType("homeBannerText")]
+		public string HomeBannerText
+		{
+			get { return this.GetPropertyValue<string>("homeBannerText"); }
+		}
 	}
 
 	/// <summary>About STAS</summary>
 	[PublishedContentModel("aboutUs")]
-	public partial class AboutUs : Master
+	public partial class AboutUs : Master, IBannerItems
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "aboutUs";
@@ -118,11 +190,38 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Banner author: naam van author van de quote in de zwarte balk
+		///</summary>
+		[ImplementPropertyType("bannerAuthor")]
+		public string BannerAuthor
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerAuthor(this); }
+		}
+
+		///<summary>
+		/// WitteBox: tekst om in de witte box op de banner te plaatsen
+		///</summary>
+		[ImplementPropertyType("witteBox")]
+		public string WitteBox
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetWitteBox(this); }
+		}
+
+		///<summary>
+		/// ZwarteText: text in zwarte box op banner
+		///</summary>
+		[ImplementPropertyType("zwarteText")]
+		public string ZwarteText
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetZwarteText(this); }
+		}
 	}
 
 	/// <summary>Corporate Identities</summary>
 	[PublishedContentModel("corporateIdentities")]
-	public partial class CorporateIdentities : Master
+	public partial class CorporateIdentities : Master, IBannerItems
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "corporateIdentities";
@@ -144,11 +243,38 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Banner author: naam van author van de quote in de zwarte balk
+		///</summary>
+		[ImplementPropertyType("bannerAuthor")]
+		public string BannerAuthor
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerAuthor(this); }
+		}
+
+		///<summary>
+		/// WitteBox: tekst om in de witte box op de banner te plaatsen
+		///</summary>
+		[ImplementPropertyType("witteBox")]
+		public string WitteBox
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetWitteBox(this); }
+		}
+
+		///<summary>
+		/// ZwarteText: text in zwarte box op banner
+		///</summary>
+		[ImplementPropertyType("zwarteText")]
+		public string ZwarteText
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetZwarteText(this); }
+		}
 	}
 
 	/// <summary>Graphic Design</summary>
 	[PublishedContentModel("graphicDesign")]
-	public partial class GraphicDesign : Master
+	public partial class GraphicDesign : Master, IBannerItems
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "graphicDesign";
@@ -170,11 +296,38 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Banner author: naam van author van de quote in de zwarte balk
+		///</summary>
+		[ImplementPropertyType("bannerAuthor")]
+		public string BannerAuthor
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerAuthor(this); }
+		}
+
+		///<summary>
+		/// WitteBox: tekst om in de witte box op de banner te plaatsen
+		///</summary>
+		[ImplementPropertyType("witteBox")]
+		public string WitteBox
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetWitteBox(this); }
+		}
+
+		///<summary>
+		/// ZwarteText: text in zwarte box op banner
+		///</summary>
+		[ImplementPropertyType("zwarteText")]
+		public string ZwarteText
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetZwarteText(this); }
+		}
 	}
 
 	/// <summary>Film Video</summary>
 	[PublishedContentModel("filmVideo")]
-	public partial class FilmVideo : Master
+	public partial class FilmVideo : Master, IBannerItems
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "filmVideo";
@@ -196,11 +349,38 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Banner author: naam van author van de quote in de zwarte balk
+		///</summary>
+		[ImplementPropertyType("bannerAuthor")]
+		public string BannerAuthor
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerAuthor(this); }
+		}
+
+		///<summary>
+		/// WitteBox: tekst om in de witte box op de banner te plaatsen
+		///</summary>
+		[ImplementPropertyType("witteBox")]
+		public string WitteBox
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetWitteBox(this); }
+		}
+
+		///<summary>
+		/// ZwarteText: text in zwarte box op banner
+		///</summary>
+		[ImplementPropertyType("zwarteText")]
+		public string ZwarteText
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetZwarteText(this); }
+		}
 	}
 
 	/// <summary>Events</summary>
 	[PublishedContentModel("events")]
-	public partial class Events : Master
+	public partial class Events : Master, IBannerItems
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "events";
@@ -222,11 +402,38 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Banner author: naam van author van de quote in de zwarte balk
+		///</summary>
+		[ImplementPropertyType("bannerAuthor")]
+		public string BannerAuthor
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerAuthor(this); }
+		}
+
+		///<summary>
+		/// WitteBox: tekst om in de witte box op de banner te plaatsen
+		///</summary>
+		[ImplementPropertyType("witteBox")]
+		public string WitteBox
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetWitteBox(this); }
+		}
+
+		///<summary>
+		/// ZwarteText: text in zwarte box op banner
+		///</summary>
+		[ImplementPropertyType("zwarteText")]
+		public string ZwarteText
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetZwarteText(this); }
+		}
 	}
 
 	/// <summary>Portfolio</summary>
 	[PublishedContentModel("portfolio")]
-	public partial class Portfolio : Master
+	public partial class Portfolio : Master, IBannerItems
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "portfolio";
@@ -247,6 +454,33 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Portfolio, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Banner author: naam van author van de quote in de zwarte balk
+		///</summary>
+		[ImplementPropertyType("bannerAuthor")]
+		public string BannerAuthor
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerAuthor(this); }
+		}
+
+		///<summary>
+		/// WitteBox: tekst om in de witte box op de banner te plaatsen
+		///</summary>
+		[ImplementPropertyType("witteBox")]
+		public string WitteBox
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetWitteBox(this); }
+		}
+
+		///<summary>
+		/// ZwarteText: text in zwarte box op banner
+		///</summary>
+		[ImplementPropertyType("zwarteText")]
+		public string ZwarteText
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetZwarteText(this); }
 		}
 	}
 
@@ -274,6 +508,82 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+	}
+
+	// Mixin content Type 1130 with alias "bannerItems"
+	/// <summary>Banner Items</summary>
+	public partial interface IBannerItems : IPublishedContent
+	{
+		/// <summary>Banner author</summary>
+		string BannerAuthor { get; }
+
+		/// <summary>WitteBox</summary>
+		string WitteBox { get; }
+
+		/// <summary>ZwarteText</summary>
+		string ZwarteText { get; }
+	}
+
+	/// <summary>Banner Items</summary>
+	[PublishedContentModel("bannerItems")]
+	public partial class BannerItems : PublishedContentModel, IBannerItems
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "bannerItems";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public BannerItems(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BannerItems, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Banner author: naam van author van de quote in de zwarte balk
+		///</summary>
+		[ImplementPropertyType("bannerAuthor")]
+		public string BannerAuthor
+		{
+			get { return GetBannerAuthor(this); }
+		}
+
+		/// <summary>Static getter for Banner author</summary>
+		public static string GetBannerAuthor(IBannerItems that) { return that.GetPropertyValue<string>("bannerAuthor"); }
+
+		///<summary>
+		/// WitteBox: tekst om in de witte box op de banner te plaatsen
+		///</summary>
+		[ImplementPropertyType("witteBox")]
+		public string WitteBox
+		{
+			get { return GetWitteBox(this); }
+		}
+
+		/// <summary>Static getter for WitteBox</summary>
+		public static string GetWitteBox(IBannerItems that) { return that.GetPropertyValue<string>("witteBox"); }
+
+		///<summary>
+		/// ZwarteText: text in zwarte box op banner
+		///</summary>
+		[ImplementPropertyType("zwarteText")]
+		public string ZwarteText
+		{
+			get { return GetZwarteText(this); }
+		}
+
+		/// <summary>Static getter for ZwarteText</summary>
+		public static string GetZwarteText(IBannerItems that) { return that.GetPropertyValue<string>("zwarteText"); }
 	}
 
 	/// <summary>Folder</summary>

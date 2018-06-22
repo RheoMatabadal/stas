@@ -5,7 +5,94 @@
 }
 
 @{ Html.RenderPartial("Content/_Home");}
-@{ Html.RenderPartial("Content/_About");}
+<section id="about">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="full-of-ideas">@Umbraco.Field("aboutTitle", casing: RenderFieldCaseType.Upper)</h1>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <p class="about-bio">@Umbraco.Field("aboutText")</p>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <img class="img-fluid hvr-bounce-in" src="~/img/karin.jpg" alt="emp">
+            </div>
+            <div class="col-sm-2">
+                <img class="img-fluid hvr-bounce-in" src="~/img/kenzo.jpg" alt="emp">
+            </div>
+            <div class="col-sm-2">
+                <img class="img-fluid hvr-bounce-in" src="~/img/charlene.jpg" alt="emp">
+            </div>
+            <div class="col-sm-2">
+                <div class="leer-ons-kennen hvr-forward">
+                    <a href="about.html" class="leer-ons-kennen">LEER ONS KENNEN <img src="~/img/down-arrow.png" alt="leeronskennen"> </a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    </div>
+    </div>
+</section>
+
 
 @{ Html.RenderPartial("Content/_HomeSlider");}
-@{ Html.RenderPartial("Content/_HomeContact");}
+<section id="contact-home">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div id=wrapper>
+                    <div class="container-fluid map-responsive">
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.5867824096867!2d-55.16303874209342!3d5.831138898943725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwNDknNTIuMSJOIDU1wrAwOSc0My4wIlc!5e0!3m2!1snl!2s!4v1527513725646" height="200px" frameborder="0" style="border:0" zoom="20" allowfullscreen></iframe>
+                    </div>
+
+                    <div id="over_map">
+                        <div class="card card-map">
+                            <div class="card-body">
+                                <center>
+                                    <h1 class="card-title hvr-pulse">
+                                        @Umbraco.Field("contactTitle")
+                                    </h1>
+                                    <br>
+
+                                    <a class="btn btn-dark space hvr-backward tog1" data-toggle="modal" data-target="#exampleModalCenter"><i class="fab fa-telegram-plane"></i> SEND US A MESSAGE</a>
+                                    <a href="#" class="btn btn-dark space hvr-forward" id="tog2"><i class="fas fa-map-marker"></i> COME VISIT US </a>
+                                </center>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="card-footer text-muted animated flash">
+                                    DR.J.F.NASSYLAAN 43,PARAMARIBO,SURINAME | +597 521262,+597 521263 | INFO@STASINTERNATIONAL.COM
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <center><div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 center-block"> <a class="btn btn-dark hvr-backward" id="tog3"><i class="fas fa-times"></i> close map</a> </div></center>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@{ Html.RenderPartial("Content/_CTAProccessing");}

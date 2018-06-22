@@ -1,0 +1,19 @@
+﻿@using Umbraco.Core.Models;
+@using Umbraco.Web;
+
+@functions
+{
+    public static Umbraco.Web.UmbracoHelper umbracoHelper = new Umbraco.Web.UmbracoHelper(Umbraco.Web.UmbracoContext.Current);
+
+}
+
+@helper ShowImage(IPublishedContent Node, string PropertyAlias, string CropAlias, string Classes){
+    
+    if (Node.HasValue(PropertyAlias))
+    {
+        int? fotoValue = Node.GetPropertyValue<int>(PropertyAlias);
+        dynamic foto = umbracoHelper.Media(fotoValue);
+        string cropUrl = foto.GetCropUrl(CropAlias);
+        <img src="@cropUrl" alt="@Node.Name" class="@Classes" />
+    }
+}
