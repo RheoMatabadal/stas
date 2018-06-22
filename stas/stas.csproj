@@ -617,6 +617,10 @@
     <Content Include="Views\Partials\Content\_About.cshtml" />
     <Content Include="Views\Partials\Content\_HomeSlider.cshtml" />
     <Content Include="Views\Partials\Content\_HomeContact.cshtml" />
+    <Content Include="Views\PortfolioDetail.cshtml" />
+    <Content Include="Views\Partials\Content\_ContactBanner.cshtml" />
+    <Content Include="Views\Partials\Content\_CTABannerABT.cshtml" />
+    <Content Include="Views\Partials\Content\_QuoteSlider.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

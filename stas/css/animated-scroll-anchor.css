@@ -1,6 +1,6 @@
 .image-hero {
   height: 100vh;
-  background-image: url('img/down-arrow.png');
+  background-image: url('~/img/down-arrow.png');
   background-repeat: no-repeat;
   background-size: cover;
   flex-wrap: wrap;
