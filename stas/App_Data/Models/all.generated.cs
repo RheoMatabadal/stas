@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "19e57dc7005775fd")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.6")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "6e97d8d6339ab226")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 
 // FILE: models.generated.cs
@@ -294,6 +294,96 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CorporateIdentities, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// bekijk Portfolio: link om portfolio te gaan bekijken
+		///</summary>
+		[ImplementPropertyType("bekijkPortfolio")]
+		public Umbraco.Web.Models.RelatedLinks BekijkPortfolio
+		{
+			get { return this.GetPropertyValue<Umbraco.Web.Models.RelatedLinks>("bekijkPortfolio"); }
+		}
+
+		///<summary>
+		/// Black Box Text: de text inhoud van de zwarte box
+		///</summary>
+		[ImplementPropertyType("blackBoxText")]
+		public IHtmlString BlackBoxText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("blackBoxText"); }
+		}
+
+		///<summary>
+		/// Black Box Title: Title van de zwarte box onder de text sectie
+		///</summary>
+		[ImplementPropertyType("blackBoxTitle")]
+		public string BlackBoxTitle
+		{
+			get { return this.GetPropertyValue<string>("blackBoxTitle"); }
+		}
+
+		///<summary>
+		/// Subtitle2: 2e subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle2")]
+		public string Subtitle2
+		{
+			get { return this.GetPropertyValue<string>("subtitle2"); }
+		}
+
+		///<summary>
+		/// Subtitle3: 3e subtitle onder 3e title
+		///</summary>
+		[ImplementPropertyType("subtitle3")]
+		public string Subtitle3
+		{
+			get { return this.GetPropertyValue<string>("subtitle3"); }
+		}
+
+		///<summary>
+		/// text: text onder 1ste titel en subtitle
+		///</summary>
+		[ImplementPropertyType("text")]
+		public IHtmlString Text
+		{
+			get { return this.GetPropertyValue<IHtmlString>("text"); }
+		}
+
+		///<summary>
+		/// text2: text onder 2e titel en subtitle
+		///</summary>
+		[ImplementPropertyType("text2")]
+		public IHtmlString Text2
+		{
+			get { return this.GetPropertyValue<IHtmlString>("text2"); }
+		}
+
+		///<summary>
+		/// text3: text onder 3e title en subtitle
+		///</summary>
+		[ImplementPropertyType("text3")]
+		public IHtmlString Text3
+		{
+			get { return this.GetPropertyValue<IHtmlString>("text3"); }
+		}
+
+		///<summary>
+		/// Title2: 2e title onder banner
+		///</summary>
+		[ImplementPropertyType("title2")]
+		public string Title2
+		{
+			get { return this.GetPropertyValue<string>("title2"); }
+		}
+
+		///<summary>
+		/// Title3: 3e title
+		///</summary>
+		[ImplementPropertyType("title3")]
+		public string Title3
+		{
+			get { return this.GetPropertyValue<string>("title3"); }
 		}
 
 		///<summary>
