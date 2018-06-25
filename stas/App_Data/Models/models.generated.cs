@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "13de1cb6f5067cbb")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "19e57dc7005775fd")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.6")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -103,12 +103,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// About Text: text onder de about title op de about sectie van de home pagina
+		/// AboutText: Text in de about sectie van de homepagina
 		///</summary>
 		[ImplementPropertyType("aboutText")]
-		public string AboutText
+		public IHtmlString AboutText
 		{
-			get { return this.GetPropertyValue<string>("aboutText"); }
+			get { return this.GetPropertyValue<IHtmlString>("aboutText"); }
 		}
 
 		///<summary>
@@ -168,7 +168,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>About STAS</summary>
 	[PublishedContentModel("aboutUs")]
-	public partial class AboutUs : Master, IBannerItems
+	public partial class AboutUs : Master, IBannerItems, ITitle
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "aboutUs";
@@ -189,6 +189,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutUs, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// About Text kolom 1: het linker kolom met text van de about us pagina
+		///</summary>
+		[ImplementPropertyType("aboutTextCol1")]
+		public IHtmlString AboutTextCol1
+		{
+			get { return this.GetPropertyValue<IHtmlString>("aboutTextCol1"); }
+		}
+
+		///<summary>
+		/// about Text kolom 2: het rechter kolom met text van de about us pagina
+		///</summary>
+		[ImplementPropertyType("aboutTextCol2")]
+		public IHtmlString AboutTextCol2
+		{
+			get { return this.GetPropertyValue<IHtmlString>("aboutTextCol2"); }
 		}
 
 		///<summary>
@@ -217,11 +235,29 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetZwarteText(this); }
 		}
+
+		///<summary>
+		/// Subtitle: subtitle voor de title onder de banner
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public IHtmlString Subtitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.Title.GetSubtitle(this); }
+		}
+
+		///<summary>
+		/// Title: title onder banner
+		///</summary>
+		[ImplementPropertyType("titleText")]
+		public string TitleText
+		{
+			get { return Umbraco.Web.PublishedContentModels.Title.GetTitleText(this); }
+		}
 	}
 
 	/// <summary>Corporate Identities</summary>
 	[PublishedContentModel("corporateIdentities")]
-	public partial class CorporateIdentities : Master, IBannerItems
+	public partial class CorporateIdentities : Master, IBannerItems, ITitle
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "corporateIdentities";
@@ -270,11 +306,29 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetZwarteText(this); }
 		}
+
+		///<summary>
+		/// Subtitle: subtitle voor de title onder de banner
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public IHtmlString Subtitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.Title.GetSubtitle(this); }
+		}
+
+		///<summary>
+		/// Title: title onder banner
+		///</summary>
+		[ImplementPropertyType("titleText")]
+		public string TitleText
+		{
+			get { return Umbraco.Web.PublishedContentModels.Title.GetTitleText(this); }
+		}
 	}
 
 	/// <summary>Graphic Design</summary>
 	[PublishedContentModel("graphicDesign")]
-	public partial class GraphicDesign : Master, IBannerItems
+	public partial class GraphicDesign : Master, IBannerItems, ITitle
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "graphicDesign";
@@ -323,11 +377,29 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetZwarteText(this); }
 		}
+
+		///<summary>
+		/// Subtitle: subtitle voor de title onder de banner
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public IHtmlString Subtitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.Title.GetSubtitle(this); }
+		}
+
+		///<summary>
+		/// Title: title onder banner
+		///</summary>
+		[ImplementPropertyType("titleText")]
+		public string TitleText
+		{
+			get { return Umbraco.Web.PublishedContentModels.Title.GetTitleText(this); }
+		}
 	}
 
 	/// <summary>Film Video</summary>
 	[PublishedContentModel("filmVideo")]
-	public partial class FilmVideo : Master, IBannerItems
+	public partial class FilmVideo : Master, IBannerItems, ITitle
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "filmVideo";
@@ -376,11 +448,29 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetZwarteText(this); }
 		}
+
+		///<summary>
+		/// Subtitle: subtitle voor de title onder de banner
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public IHtmlString Subtitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.Title.GetSubtitle(this); }
+		}
+
+		///<summary>
+		/// Title: title onder banner
+		///</summary>
+		[ImplementPropertyType("titleText")]
+		public string TitleText
+		{
+			get { return Umbraco.Web.PublishedContentModels.Title.GetTitleText(this); }
+		}
 	}
 
 	/// <summary>Events</summary>
 	[PublishedContentModel("events")]
-	public partial class Events : Master, IBannerItems
+	public partial class Events : Master, IBannerItems, ITitle
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "events";
@@ -428,6 +518,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public string ZwarteText
 		{
 			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetZwarteText(this); }
+		}
+
+		///<summary>
+		/// Subtitle: subtitle voor de title onder de banner
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public IHtmlString Subtitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.Title.GetSubtitle(this); }
+		}
+
+		///<summary>
+		/// Title: title onder banner
+		///</summary>
+		[ImplementPropertyType("titleText")]
+		public string TitleText
+		{
+			get { return Umbraco.Web.PublishedContentModels.Title.GetTitleText(this); }
 		}
 	}
 
@@ -584,6 +692,67 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for ZwarteText</summary>
 		public static string GetZwarteText(IBannerItems that) { return that.GetPropertyValue<string>("zwarteText"); }
+	}
+
+	// Mixin content Type 1132 with alias "title"
+	/// <summary>Title</summary>
+	public partial interface ITitle : IPublishedContent
+	{
+		/// <summary>Subtitle</summary>
+		IHtmlString Subtitle { get; }
+
+		/// <summary>Title</summary>
+		string TitleText { get; }
+	}
+
+	/// <summary>Title</summary>
+	[PublishedContentModel("title")]
+	public partial class Title : PublishedContentModel, ITitle
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "title";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Title(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Title, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Subtitle: subtitle voor de title onder de banner
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public IHtmlString Subtitle
+		{
+			get { return GetSubtitle(this); }
+		}
+
+		/// <summary>Static getter for Subtitle</summary>
+		public static IHtmlString GetSubtitle(ITitle that) { return that.GetPropertyValue<IHtmlString>("subtitle"); }
+
+		///<summary>
+		/// Title: title onder banner
+		///</summary>
+		[ImplementPropertyType("titleText")]
+		public string TitleText
+		{
+			get { return GetTitleText(this); }
+		}
+
+		/// <summary>Static getter for Title</summary>
+		public static string GetTitleText(ITitle that) { return that.GetPropertyValue<string>("titleText"); }
 	}
 
 	/// <summary>Folder</summary>
