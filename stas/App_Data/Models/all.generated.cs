@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "5b799fc12f5025a6")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "e30187d3b5ec5b4d")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -526,6 +526,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FilmVideo, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Film Text Col 1: linker text kolom voor film pagina
+		///</summary>
+		[ImplementPropertyType("filmTextCol1")]
+		public IHtmlString FilmTextCol1
+		{
+			get { return this.GetPropertyValue<IHtmlString>("filmTextCol1"); }
+		}
+
+		///<summary>
+		/// Film Text col 2: rechter Text kolom film pagina
+		///</summary>
+		[ImplementPropertyType("filmTextCol2")]
+		public IHtmlString FilmTextCol2
+		{
+			get { return this.GetPropertyValue<IHtmlString>("filmTextCol2"); }
 		}
 
 		///<summary>

@@ -1481,3 +1481,13 @@ _shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needF
  2018-06-25 13:31:07,963 [P12120/D3/T38] INFO  Umbraco.Core.PluginManager - Resolving [umbraco.businesslogic.TreeAttribute]umbraco.interfaces.ITree
  2018-06-25 13:31:07,964 [P12120/D3/T38] INFO  Umbraco.Core.PluginManager - Resolved [umbraco.businesslogic.TreeAttribute]umbraco.interfaces.ITree (took 1ms)
  2018-06-25 13:31:23,533 [P12120/D3/T46] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2018-06-24 13:31:22
+ 2018-06-25 13:41:51,553 [P12120/D3/T38] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Film/Video' with Id '1113' has been published.
+ 2018-06-25 13:41:57,549 [P12120/D3/T55] INFO  umbraco.content - Save Xml to file...
+ 2018-06-25 13:41:57,652 [P12120/D3/T55] INFO  umbraco.content - Saved Xml to file.
+ 2018-06-25 13:44:14,031 [P12120/D3/T48] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2018-06-25 13:44:14,032 [P12120/D3/T48] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 1ms)
+ 2018-06-25 13:44:14,033 [P12120/D3/T48] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Editors.IEditorValidator
+ 2018-06-25 13:44:14,099 [P12120/D3/T48] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Editors.IEditorValidator (took 65ms)
+ 2018-06-25 13:45:22,731 [P12120/D3/T56] INFO  Umbraco.Core.Publishing.PublishingStrategy - Content 'Film/Video' with Id '1113' has been published.
+ 2018-06-25 13:45:27,862 [P12120/D3/T56] INFO  umbraco.content - Save Xml to file...
+ 2018-06-25 13:45:27,891 [P12120/D3/T56] INFO  umbraco.content - Saved Xml to file.
