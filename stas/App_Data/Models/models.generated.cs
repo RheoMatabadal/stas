@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "e30187d3b5ec5b4d")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "fb6d1fbdfb801aed")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -439,6 +439,60 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<GraphicDesign, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Adobe CC: adobe CC title onder Adobe CC image
+		///</summary>
+		[ImplementPropertyType("adobeCC")]
+		public string AdobeCC
+		{
+			get { return this.GetPropertyValue<string>("adobeCC"); }
+		}
+
+		///<summary>
+		/// DTP: DTP onder dtp image
+		///</summary>
+		[ImplementPropertyType("dTP")]
+		public string DTP
+		{
+			get { return this.GetPropertyValue<string>("dTP"); }
+		}
+
+		///<summary>
+		/// Graphic Col links: linker kolom van graphics design text
+		///</summary>
+		[ImplementPropertyType("graphicColLinks")]
+		public IHtmlString GraphicColLinks
+		{
+			get { return this.GetPropertyValue<IHtmlString>("graphicColLinks"); }
+		}
+
+		///<summary>
+		/// Graphic Col Rechts: Rechter colom van graphic design text
+		///</summary>
+		[ImplementPropertyType("graphicColRechts")]
+		public IHtmlString GraphicColRechts
+		{
+			get { return this.GetPropertyValue<IHtmlString>("graphicColRechts"); }
+		}
+
+		///<summary>
+		/// Ontwerp: ontwerp title onder ontwerp image
+		///</summary>
+		[ImplementPropertyType("ontwerp")]
+		public string Ontwerp
+		{
+			get { return this.GetPropertyValue<string>("ontwerp"); }
+		}
+
+		///<summary>
+		/// Webdesign: webdesign title onder webdesign image
+		///</summary>
+		[ImplementPropertyType("webdesign")]
+		public string Webdesign
+		{
+			get { return this.GetPropertyValue<string>("webdesign"); }
 		}
 
 		///<summary>
