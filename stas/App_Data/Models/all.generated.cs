@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "6e97d8d6339ab226")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "5b799fc12f5025a6")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
 
 
 // FILE: models.generated.cs
@@ -597,6 +597,60 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Events, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Concept Text: Text voor concept Item
+		///</summary>
+		[ImplementPropertyType("conceptText")]
+		public IHtmlString ConceptText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("conceptText"); }
+		}
+
+		///<summary>
+		/// Concept Title: Title voor concept Item
+		///</summary>
+		[ImplementPropertyType("conceptTitle")]
+		public string ConceptTitle
+		{
+			get { return this.GetPropertyValue<string>("conceptTitle"); }
+		}
+
+		///<summary>
+		/// Logistiek Text: Text voor logistiek Item
+		///</summary>
+		[ImplementPropertyType("logistiekText")]
+		public IHtmlString LogistiekText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("logistiekText"); }
+		}
+
+		///<summary>
+		/// Logistiek Title: text voor logistiek item
+		///</summary>
+		[ImplementPropertyType("logistiekTitle")]
+		public string LogistiekTitle
+		{
+			get { return this.GetPropertyValue<string>("logistiekTitle"); }
+		}
+
+		///<summary>
+		/// Pers Text: Text voor pers Item
+		///</summary>
+		[ImplementPropertyType("persText")]
+		public IHtmlString PersText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("persText"); }
+		}
+
+		///<summary>
+		/// Pers Title: Title voor pers item
+		///</summary>
+		[ImplementPropertyType("persTitle")]
+		public string PersTitle
+		{
+			get { return this.GetPropertyValue<string>("persTitle"); }
 		}
 
 		///<summary>
