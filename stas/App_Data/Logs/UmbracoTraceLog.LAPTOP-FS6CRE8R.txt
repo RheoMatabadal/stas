@@ -1665,3 +1665,6 @@ _shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needF
  2018-06-26 14:31:35,785 [P6836/D2/T56] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: rheo.matabadal.natin@gmail.com, IP Address: ::1
  2018-06-26 14:54:25,801 [P6836/D2/T54] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username rheo.matabadal.natin@gmail.com from IP address ::1
  2018-06-26 14:54:25,802 [P6836/D2/T54] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: rheo.matabadal.natin@gmail.com logged in from IP address ::1
+ 2018-06-26 15:38:45,846 [P6836/D2/T31] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username rheo.matabadal.natin@gmail.com from IP address ::1
+ 2018-06-26 15:38:45,847 [P6836/D2/T31] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: rheo.matabadal.natin@gmail.com logged in from IP address ::1
+ 2018-06-26 15:58:21,514 [P6836/D2/T49] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: rheo.matabadal.natin@gmail.com, IP Address: ::1
