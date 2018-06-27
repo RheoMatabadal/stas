@@ -3,7 +3,9 @@
 @{
     Layout = "Master.cshtml";
     string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
+    string CTAImageURL = Model.Content.GetPropertyValue<IPublishedContent>("ctaImage").Url;
 }
+
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <section id="graphic_banner">
     <div class="container-fluid">
@@ -24,7 +26,7 @@
                 <div class="card">
                     <div class="card-body card-dark">
                         <h2 class="card-title">@Umbraco.Field("zwarteText")</h2>
-                        <h4 class="card-title card-author">@Umbraco.Field("bannerAuthor", insertBefore:"-")</h4>
+                        <h4 class="card-title card-author">@Umbraco.Field("bannerAuthor", insertBefore: "-")</h4>
                     </div>
                 </div>
 
@@ -132,8 +134,23 @@
         </div>
     </div>
 </section>
-@{ Html.RenderPartial("Content/_CTABannerGraphic");}
-  @{ Html.RenderPartial("Content/_CTAProccessing");}
+<section id="cta-banner">
+    <div class="container-fluid">
+        <div class="row">
+            <img src="@CTAImageURL" class="img-responsive banner-image" />
+            <div class="col-md-6 col-sm-12 col-xs-12">
+
+                <h2 class="cta-text">Want to know what STAS can do for u?</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-5 col-xs-">
+                <button class="btn btn-white cta-button" data-toggle="modal" data-target="#exampleModalCenter">LET'S GET IN TOUCH</button>
+            </div>
+        </div>
+    </div>
+</section>
+@{ Html.RenderPartial("Content/_CTAProccessing");}
 
 
 @{Html.RenderPartial("Content/_ContactBanner");}

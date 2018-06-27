@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "70fa1dafe7be9440")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "eaaf80551d69b1aa")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -177,7 +177,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>About STAS</summary>
 	[PublishedContentModel("aboutUs")]
-	public partial class AboutUs : Master, IBannerItems, ITitle
+	public partial class AboutUs : Master, IBannerItems, ICtaBanner, ITitle
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "aboutUs";
@@ -252,6 +252,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string ZwarteText
 		{
 			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetZwarteText(this); }
+		}
+
+		///<summary>
+		/// cta Image: foto voor de call to action banner
+		///</summary>
+		[ImplementPropertyType("ctaImage")]
+		public IPublishedContent CtaImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.CtaBanner.GetCtaImage(this); }
 		}
 
 		///<summary>
@@ -445,7 +454,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Graphic Design</summary>
 	[PublishedContentModel("graphicDesign")]
-	public partial class GraphicDesign : Master, IBannerItems, ITitle
+	public partial class GraphicDesign : Master, IBannerItems, ICtaBanner, ITitle
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "graphicDesign";
@@ -559,6 +568,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// cta Image: foto voor de call to action banner
+		///</summary>
+		[ImplementPropertyType("ctaImage")]
+		public IPublishedContent CtaImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.CtaBanner.GetCtaImage(this); }
+		}
+
+		///<summary>
 		/// Subtitle: subtitle voor de title onder de banner
 		///</summary>
 		[ImplementPropertyType("subtitle")]
@@ -579,7 +597,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Film Video</summary>
 	[PublishedContentModel("filmVideo")]
-	public partial class FilmVideo : Master, IBannerItems, ITitle
+	public partial class FilmVideo : Master, IBannerItems, ICtaBanner, ITitle
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "filmVideo";
@@ -654,6 +672,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string ZwarteText
 		{
 			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetZwarteText(this); }
+		}
+
+		///<summary>
+		/// cta Image: foto voor de call to action banner
+		///</summary>
+		[ImplementPropertyType("ctaImage")]
+		public IPublishedContent CtaImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.CtaBanner.GetCtaImage(this); }
 		}
 
 		///<summary>
@@ -1047,6 +1074,52 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Title</summary>
 		public static string GetTitleText(ITitle that) { return that.GetPropertyValue<string>("titleText"); }
+	}
+
+	// Mixin content Type 2141 with alias "ctaBanner"
+	/// <summary>cta Banner</summary>
+	public partial interface ICtaBanner : IPublishedContent
+	{
+		/// <summary>cta Image</summary>
+		IPublishedContent CtaImage { get; }
+	}
+
+	/// <summary>cta Banner</summary>
+	[PublishedContentModel("ctaBanner")]
+	public partial class CtaBanner : PublishedContentModel, ICtaBanner
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "ctaBanner";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public CtaBanner(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CtaBanner, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// cta Image: foto voor de call to action banner
+		///</summary>
+		[ImplementPropertyType("ctaImage")]
+		public IPublishedContent CtaImage
+		{
+			get { return GetCtaImage(this); }
+		}
+
+		/// <summary>Static getter for cta Image</summary>
+		public static IPublishedContent GetCtaImage(ICtaBanner that) { return that.GetPropertyValue<IPublishedContent>("ctaImage"); }
 	}
 
 	/// <summary>Folder</summary>

@@ -620,11 +620,8 @@
     <Content Include="Views\Partials\Content\_HomeContact.cshtml" />
     <Content Include="Views\PortfolioDetail.cshtml" />
     <Content Include="Views\Partials\Content\_ContactBanner.cshtml" />
-    <Content Include="Views\Partials\Content\_CTABannerABT.cshtml" />
     <Content Include="Views\Partials\Content\_QuoteSlider.cshtml" />
     <Content Include="Views\Partials\Content\_CTAProccessing.cshtml" />
-    <Content Include="Views\Partials\Content\_CTABannerFilm.cshtml" />
-    <Content Include="Views\Partials\Content\_CTABannerGraphic.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
