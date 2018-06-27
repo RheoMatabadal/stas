@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "fb6d1fbdfb801aed")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "70fa1dafe7be9440")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -164,6 +164,15 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return this.GetPropertyValue<string>("homeBannerText"); }
 		}
+
+		///<summary>
+		/// Home Landing Image: kies een foto om op de home pagina te tonen
+		///</summary>
+		[ImplementPropertyType("homeLandingImage")]
+		public IPublishedContent HomeLandingImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("homeLandingImage"); }
+		}
 	}
 
 	/// <summary>About STAS</summary>
@@ -216,6 +225,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string BannerAuthor
 		{
 			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerAuthor(this); }
+		}
+
+		///<summary>
+		/// Banner Image: Banner foto
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerImage(this); }
 		}
 
 		///<summary>
@@ -380,6 +398,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Banner Image: Banner foto
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerImage(this); }
+		}
+
+		///<summary>
 		/// WitteBox: tekst om in de witte box op de banner te plaatsen
 		///</summary>
 		[ImplementPropertyType("witteBox")]
@@ -505,6 +532,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Banner Image: Banner foto
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerImage(this); }
+		}
+
+		///<summary>
 		/// WitteBox: tekst om in de witte box op de banner te plaatsen
 		///</summary>
 		[ImplementPropertyType("witteBox")]
@@ -591,6 +627,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string BannerAuthor
 		{
 			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerAuthor(this); }
+		}
+
+		///<summary>
+		/// Banner Image: Banner foto
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerImage(this); }
 		}
 
 		///<summary>
@@ -719,6 +764,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Banner Image: Banner foto
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerImage(this); }
+		}
+
+		///<summary>
 		/// WitteBox: tekst om in de witte box op de banner te plaatsen
 		///</summary>
 		[ImplementPropertyType("witteBox")]
@@ -790,6 +844,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Banner Image: Banner foto
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerImage(this); }
+		}
+
+		///<summary>
 		/// WitteBox: tekst om in de witte box op de banner te plaatsen
 		///</summary>
 		[ImplementPropertyType("witteBox")]
@@ -841,6 +904,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// <summary>Banner author</summary>
 		string BannerAuthor { get; }
 
+		/// <summary>Banner Image</summary>
+		IPublishedContent BannerImage { get; }
+
 		/// <summary>WitteBox</summary>
 		string WitteBox { get; }
 
@@ -884,6 +950,18 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Banner author</summary>
 		public static string GetBannerAuthor(IBannerItems that) { return that.GetPropertyValue<string>("bannerAuthor"); }
+
+		///<summary>
+		/// Banner Image: Banner foto
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return GetBannerImage(this); }
+		}
+
+		/// <summary>Static getter for Banner Image</summary>
+		public static IPublishedContent GetBannerImage(IBannerItems that) { return that.GetPropertyValue<IPublishedContent>("bannerImage"); }
 
 		///<summary>
 		/// WitteBox: tekst om in de witte box op de banner te plaatsen

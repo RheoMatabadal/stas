@@ -2,6 +2,7 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "Master.cshtml";
+    string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
 }
 
 
@@ -9,7 +10,7 @@
 <section id="event_banner">
     <div class="container-fluid">
         <div class="row">
-            <img src="~/img/eventsBanner.jpg" class="img-responsive banner-image" />
+            <img src="@bannerImageUrl" class="img-responsive banner-image" />
             <div class="col-md-6 col-sm-offset-1">
                 <div class="card">
                     <div class="card-body card-white">

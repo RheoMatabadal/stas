@@ -2,12 +2,13 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "Master.cshtml";
+    string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
 }
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <section id="corporate_banner">
     <div class="container-fluid">
         <div class="row">
-            <img src="~/img/corporateBanner.jpg" class="img-responsive banner-image" />
+            <img src="@bannerImageUrl" class="img-responsive banner-image" />
             <div class="col-md-6 col-sm-offset-1">
                 <div class="card">
                     <div class="card-body card-white">
