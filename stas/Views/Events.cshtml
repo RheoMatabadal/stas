@@ -13,7 +13,6 @@
         min-height: 400px;">
     <div class="container-fluid">
         <div class="row">
-            <img src="@bannerImageUrl" class="img-responsive banner-image" />
             <div class="col-md-6 col-sm-offset-1">
                 <div class="card">
                     <div class="card-body card-white">
@@ -29,7 +28,7 @@
                 <div class="card">
                     <div class="card-body card-dark">
                         <h2 class="card-title">@Umbraco.Field("zwarteText")</h2>
-                        <h4 class="card-title">@Umbraco.Field("bannerAuthor", insertBefore:"-")</h4>
+                        <h4 class="card-title">@Umbraco.Field("bannerAuthor", insertBefore: "-")</h4>
                     </div>
                 </div>
 
@@ -158,6 +157,5 @@
 </section>
 @{ Html.RenderPartial("Content/_QuoteSlider");}
 @{ Html.RenderPartial("Content/_ContactBanner");}
-
 
 
