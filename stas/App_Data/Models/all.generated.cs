@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "cdc91886c994bea5")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "8e9695edc6e85b43")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -86,7 +86,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : Master, IFooter
+	public partial class Home : Master, IFeaturedArtist, IFooter
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";
@@ -188,6 +188,42 @@ namespace Umbraco.Web.PublishedContentModels
 		public IPublishedContent HomeLandingImage
 		{
 			get { return this.GetPropertyValue<IPublishedContent>("homeLandingImage"); }
+		}
+
+		///<summary>
+		/// About Artist: write story about the artist here
+		///</summary>
+		[ImplementPropertyType("aboutArtist")]
+		public IHtmlString AboutArtist
+		{
+			get { return Umbraco.Web.PublishedContentModels.FeaturedArtist.GetAboutArtist(this); }
+		}
+
+		///<summary>
+		/// Artist Image: Add Image of the artist
+		///</summary>
+		[ImplementPropertyType("artistImage")]
+		public IPublishedContent ArtistImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.FeaturedArtist.GetArtistImage(this); }
+		}
+
+		///<summary>
+		/// Artist Name: naam van de featured artist
+		///</summary>
+		[ImplementPropertyType("artistName")]
+		public string ArtistName
+		{
+			get { return Umbraco.Web.PublishedContentModels.FeaturedArtist.GetArtistName(this); }
+		}
+
+		///<summary>
+		/// Artist website: Enter website information about artist
+		///</summary>
+		[ImplementPropertyType("artistWebsite")]
+		public Umbraco.Web.Models.RelatedLinks ArtistWebsite
+		{
+			get { return Umbraco.Web.PublishedContentModels.FeaturedArtist.GetArtistWebsite(this); }
 		}
 
 		///<summary>
@@ -1305,6 +1341,97 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Vimeo</summary>
 		public static string GetVimeo(IFooter that) { return that.GetPropertyValue<string>("vimeo"); }
+	}
+
+	// Mixin content Type 2152 with alias "featuredArtist"
+	/// <summary>Featured Artist</summary>
+	public partial interface IFeaturedArtist : IPublishedContent
+	{
+		/// <summary>About Artist</summary>
+		IHtmlString AboutArtist { get; }
+
+		/// <summary>Artist Image</summary>
+		IPublishedContent ArtistImage { get; }
+
+		/// <summary>Artist Name</summary>
+		string ArtistName { get; }
+
+		/// <summary>Artist website</summary>
+		Umbraco.Web.Models.RelatedLinks ArtistWebsite { get; }
+	}
+
+	/// <summary>Featured Artist</summary>
+	[PublishedContentModel("featuredArtist")]
+	public partial class FeaturedArtist : PublishedContentModel, IFeaturedArtist
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "featuredArtist";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public FeaturedArtist(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FeaturedArtist, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// About Artist: write story about the artist here
+		///</summary>
+		[ImplementPropertyType("aboutArtist")]
+		public IHtmlString AboutArtist
+		{
+			get { return GetAboutArtist(this); }
+		}
+
+		/// <summary>Static getter for About Artist</summary>
+		public static IHtmlString GetAboutArtist(IFeaturedArtist that) { return that.GetPropertyValue<IHtmlString>("aboutArtist"); }
+
+		///<summary>
+		/// Artist Image: Add Image of the artist
+		///</summary>
+		[ImplementPropertyType("artistImage")]
+		public IPublishedContent ArtistImage
+		{
+			get { return GetArtistImage(this); }
+		}
+
+		/// <summary>Static getter for Artist Image</summary>
+		public static IPublishedContent GetArtistImage(IFeaturedArtist that) { return that.GetPropertyValue<IPublishedContent>("artistImage"); }
+
+		///<summary>
+		/// Artist Name: naam van de featured artist
+		///</summary>
+		[ImplementPropertyType("artistName")]
+		public string ArtistName
+		{
+			get { return GetArtistName(this); }
+		}
+
+		/// <summary>Static getter for Artist Name</summary>
+		public static string GetArtistName(IFeaturedArtist that) { return that.GetPropertyValue<string>("artistName"); }
+
+		///<summary>
+		/// Artist website: Enter website information about artist
+		///</summary>
+		[ImplementPropertyType("artistWebsite")]
+		public Umbraco.Web.Models.RelatedLinks ArtistWebsite
+		{
+			get { return GetArtistWebsite(this); }
+		}
+
+		/// <summary>Static getter for Artist website</summary>
+		public static Umbraco.Web.Models.RelatedLinks GetArtistWebsite(IFeaturedArtist that) { return that.GetPropertyValue<Umbraco.Web.Models.RelatedLinks>("artistWebsite"); }
 	}
 
 	/// <summary>Folder</summary>

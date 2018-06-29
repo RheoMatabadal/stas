@@ -97,14 +97,7 @@ h1 {
     /*color: black;*/
 }
 
-#home {
-    /*padding-top: 50px;*/
-    min-height: 700px;
-    color: #fff;
-    background: url('../img/ctaBanner.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+
 
 #about {
     padding-top: 50px;

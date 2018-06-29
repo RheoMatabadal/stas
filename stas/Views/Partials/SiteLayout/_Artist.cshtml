@@ -1,6 +1,6 @@
 ﻿@inherits UmbracoViewPage
 <div class="vl" id="vl" onclick="openArt()">
-    <p>FEATURED ARTIST: KATHLEEN HOGENBOOM</p>
+    <p>FEATURED ARTIST: @Umbraco.Field("artistName", casing: RenderFieldCaseType.Upper)</p>
 </div>
 <section id="artist">
     <div id="mySidenav" class="sidenav">
@@ -52,8 +52,8 @@
                     <p class="about-artist">ABOUT THE ARTIST</p>
 
                     <p>
-                        Kathleen Hogenboom grew up in the former Dutch Caribbean island of Curacao since from the age of 9. At 17 she moved back to The Netherlands to pursue her study in illustration at the academy of art St. Joost in 's Hertogenbosch.  The experience Kathleen gained living in a multicultural society is something that continues to influence her work.
-                        <br> <br> Visit Kathleens website to see  more of her work
+                        @Umbraco.Field("aboutArtist")
+                        <br> <br> Visit @Umbraco.Field("artistName", insertAfter:"'s") website to see  more of her work
                         <a class="left-align" href="http://www.kathleenhogenboom.com" target="_blank">kathleenhogenboom.com</a>
                 </div>
                 <a href="javascript:void(0)" class="closebtn" onclick="closeArt()">&times;</a>
