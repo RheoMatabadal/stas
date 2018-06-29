@@ -2,11 +2,15 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "Master.cshtml";
+    string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
 }
 
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<section id="event_banner">
+<section id="event_banner" style="background-image: url('@bannerImageUrl');
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 400px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 col-sm-offset-1">

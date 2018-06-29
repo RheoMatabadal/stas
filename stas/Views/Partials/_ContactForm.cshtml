@@ -1,0 +1,41 @@
+﻿@inherits UmbracoViewPage<ContactViewModel>
+
+@using stas.Models
+
+@using (Ajax.BeginForm("SubmitForm", "Contact", new AjaxOptions()
+{
+    UpdateTargetId = "form-result",
+    HttpMethod = "POST",
+    InsertionMode = InsertionMode.Replace,
+    OnSuccess = "contactForm.showResult",
+    OnFailure = "contactForm.showResult"
+
+}, new { id = "contact-form" }))
+{
+
+    <div class="form-group">
+         @Html.TextBoxFor(m => m.Name, new { placeholder = "Name" })
+
+    </div>
+    <br>
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Email, new { placeholder = "Email" })
+
+    </div>
+    <br>
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Subject, new { placeholder = "Subject" })
+
+    </div>
+    <br>
+    <div class="form-group">
+        @Html.TextAreaFor(m => m.Message, new { placeholder = "Message", row = "3" })
+
+    </div>
+    <div class="modal-footer">
+        <ul class="actions">
+        <button type="button" class="btn btn-dark pull-left hvr-pulse-grow contact-submit"><i class="fab fa-telegram-plane"></i> Send Message</button>
+    </ul></div>
+
+}
+<div id="form-result"></div>

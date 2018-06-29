@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "fb6d1fbdfb801aed")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "cdc91886c994bea5")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -86,7 +86,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : Master
+	public partial class Home : Master, IFooter
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";
@@ -180,11 +180,56 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return this.GetPropertyValue<string>("homeBannerText"); }
 		}
+
+		///<summary>
+		/// Home Landing Image: kies een foto om op de home pagina te tonen
+		///</summary>
+		[ImplementPropertyType("homeLandingImage")]
+		public IPublishedContent HomeLandingImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("homeLandingImage"); }
+		}
+
+		///<summary>
+		/// email: email for footer
+		///</summary>
+		[ImplementPropertyType("email")]
+		public string Email
+		{
+			get { return Umbraco.Web.PublishedContentModels.Footer.GetEmail(this); }
+		}
+
+		///<summary>
+		/// Facebook: stas facebook link
+		///</summary>
+		[ImplementPropertyType("facebook")]
+		public string Facebook
+		{
+			get { return Umbraco.Web.PublishedContentModels.Footer.GetFacebook(this); }
+		}
+
+		///<summary>
+		/// Phone number: telefoon nummer
+		///</summary>
+		[ImplementPropertyType("phoneNumber")]
+		public string PhoneNumber
+		{
+			get { return Umbraco.Web.PublishedContentModels.Footer.GetPhoneNumber(this); }
+		}
+
+		///<summary>
+		/// Vimeo: stas vimeo link
+		///</summary>
+		[ImplementPropertyType("vimeo")]
+		public string Vimeo
+		{
+			get { return Umbraco.Web.PublishedContentModels.Footer.GetVimeo(this); }
+		}
 	}
 
 	/// <summary>About STAS</summary>
 	[PublishedContentModel("aboutUs")]
-	public partial class AboutUs : Master, IBannerItems, ITitle
+	public partial class AboutUs : Master, IBannerItems, ICtaBanner, ITitle
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "aboutUs";
@@ -235,6 +280,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Banner Image: Banner foto
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerImage(this); }
+		}
+
+		///<summary>
 		/// WitteBox: tekst om in de witte box op de banner te plaatsen
 		///</summary>
 		[ImplementPropertyType("witteBox")]
@@ -250,6 +304,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public string ZwarteText
 		{
 			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetZwarteText(this); }
+		}
+
+		///<summary>
+		/// Contact link: link om naar de contact form te gaan
+		///</summary>
+		[ImplementPropertyType("contactLink")]
+		public Umbraco.Web.Models.RelatedLinks ContactLink
+		{
+			get { return Umbraco.Web.PublishedContentModels.CtaBanner.GetContactLink(this); }
+		}
+
+		///<summary>
+		/// cta Image: foto voor de call to action banner
+		///</summary>
+		[ImplementPropertyType("ctaImage")]
+		public IPublishedContent CtaImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.CtaBanner.GetCtaImage(this); }
 		}
 
 		///<summary>
@@ -396,6 +468,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Banner Image: Banner foto
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerImage(this); }
+		}
+
+		///<summary>
 		/// WitteBox: tekst om in de witte box op de banner te plaatsen
 		///</summary>
 		[ImplementPropertyType("witteBox")]
@@ -434,7 +515,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Graphic Design</summary>
 	[PublishedContentModel("graphicDesign")]
-	public partial class GraphicDesign : Master, IBannerItems, ITitle
+	public partial class GraphicDesign : Master, IBannerItems, ICtaBanner, ITitle
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "graphicDesign";
@@ -521,6 +602,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Banner Image: Banner foto
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerImage(this); }
+		}
+
+		///<summary>
 		/// WitteBox: tekst om in de witte box op de banner te plaatsen
 		///</summary>
 		[ImplementPropertyType("witteBox")]
@@ -536,6 +626,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public string ZwarteText
 		{
 			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetZwarteText(this); }
+		}
+
+		///<summary>
+		/// Contact link: link om naar de contact form te gaan
+		///</summary>
+		[ImplementPropertyType("contactLink")]
+		public Umbraco.Web.Models.RelatedLinks ContactLink
+		{
+			get { return Umbraco.Web.PublishedContentModels.CtaBanner.GetContactLink(this); }
+		}
+
+		///<summary>
+		/// cta Image: foto voor de call to action banner
+		///</summary>
+		[ImplementPropertyType("ctaImage")]
+		public IPublishedContent CtaImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.CtaBanner.GetCtaImage(this); }
 		}
 
 		///<summary>
@@ -559,7 +667,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Film Video</summary>
 	[PublishedContentModel("filmVideo")]
-	public partial class FilmVideo : Master, IBannerItems, ITitle
+	public partial class FilmVideo : Master, IBannerItems, ICtaBanner, ITitle
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "filmVideo";
@@ -610,6 +718,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Banner Image: Banner foto
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerImage(this); }
+		}
+
+		///<summary>
 		/// WitteBox: tekst om in de witte box op de banner te plaatsen
 		///</summary>
 		[ImplementPropertyType("witteBox")]
@@ -625,6 +742,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public string ZwarteText
 		{
 			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetZwarteText(this); }
+		}
+
+		///<summary>
+		/// Contact link: link om naar de contact form te gaan
+		///</summary>
+		[ImplementPropertyType("contactLink")]
+		public Umbraco.Web.Models.RelatedLinks ContactLink
+		{
+			get { return Umbraco.Web.PublishedContentModels.CtaBanner.GetContactLink(this); }
+		}
+
+		///<summary>
+		/// cta Image: foto voor de call to action banner
+		///</summary>
+		[ImplementPropertyType("ctaImage")]
+		public IPublishedContent CtaImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.CtaBanner.GetCtaImage(this); }
 		}
 
 		///<summary>
@@ -735,6 +870,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Banner Image: Banner foto
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerImage(this); }
+		}
+
+		///<summary>
 		/// WitteBox: tekst om in de witte box op de banner te plaatsen
 		///</summary>
 		[ImplementPropertyType("witteBox")]
@@ -806,6 +950,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Banner Image: Banner foto
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerItems.GetBannerImage(this); }
+		}
+
+		///<summary>
 		/// WitteBox: tekst om in de witte box op de banner te plaatsen
 		///</summary>
 		[ImplementPropertyType("witteBox")]
@@ -857,6 +1010,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// <summary>Banner author</summary>
 		string BannerAuthor { get; }
 
+		/// <summary>Banner Image</summary>
+		IPublishedContent BannerImage { get; }
+
 		/// <summary>WitteBox</summary>
 		string WitteBox { get; }
 
@@ -900,6 +1056,18 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Banner author</summary>
 		public static string GetBannerAuthor(IBannerItems that) { return that.GetPropertyValue<string>("bannerAuthor"); }
+
+		///<summary>
+		/// Banner Image: Banner foto
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public IPublishedContent BannerImage
+		{
+			get { return GetBannerImage(this); }
+		}
+
+		/// <summary>Static getter for Banner Image</summary>
+		public static IPublishedContent GetBannerImage(IBannerItems that) { return that.GetPropertyValue<IPublishedContent>("bannerImage"); }
 
 		///<summary>
 		/// WitteBox: tekst om in de witte box op de banner te plaatsen
@@ -985,6 +1153,158 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Title</summary>
 		public static string GetTitleText(ITitle that) { return that.GetPropertyValue<string>("titleText"); }
+	}
+
+	// Mixin content Type 2141 with alias "ctaBanner"
+	/// <summary>cta Banner</summary>
+	public partial interface ICtaBanner : IPublishedContent
+	{
+		/// <summary>Contact link</summary>
+		Umbraco.Web.Models.RelatedLinks ContactLink { get; }
+
+		/// <summary>cta Image</summary>
+		IPublishedContent CtaImage { get; }
+	}
+
+	/// <summary>cta Banner</summary>
+	[PublishedContentModel("ctaBanner")]
+	public partial class CtaBanner : PublishedContentModel, ICtaBanner
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "ctaBanner";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public CtaBanner(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CtaBanner, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Contact link: link om naar de contact form te gaan
+		///</summary>
+		[ImplementPropertyType("contactLink")]
+		public Umbraco.Web.Models.RelatedLinks ContactLink
+		{
+			get { return GetContactLink(this); }
+		}
+
+		/// <summary>Static getter for Contact link</summary>
+		public static Umbraco.Web.Models.RelatedLinks GetContactLink(ICtaBanner that) { return that.GetPropertyValue<Umbraco.Web.Models.RelatedLinks>("contactLink"); }
+
+		///<summary>
+		/// cta Image: foto voor de call to action banner
+		///</summary>
+		[ImplementPropertyType("ctaImage")]
+		public IPublishedContent CtaImage
+		{
+			get { return GetCtaImage(this); }
+		}
+
+		/// <summary>Static getter for cta Image</summary>
+		public static IPublishedContent GetCtaImage(ICtaBanner that) { return that.GetPropertyValue<IPublishedContent>("ctaImage"); }
+	}
+
+	// Mixin content Type 2143 with alias "footer"
+	/// <summary>footer</summary>
+	public partial interface IFooter : IPublishedContent
+	{
+		/// <summary>email</summary>
+		string Email { get; }
+
+		/// <summary>Facebook</summary>
+		string Facebook { get; }
+
+		/// <summary>Phone number</summary>
+		string PhoneNumber { get; }
+
+		/// <summary>Vimeo</summary>
+		string Vimeo { get; }
+	}
+
+	/// <summary>footer</summary>
+	[PublishedContentModel("footer")]
+	public partial class Footer : PublishedContentModel, IFooter
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "footer";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Footer(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Footer, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// email: email for footer
+		///</summary>
+		[ImplementPropertyType("email")]
+		public string Email
+		{
+			get { return GetEmail(this); }
+		}
+
+		/// <summary>Static getter for email</summary>
+		public static string GetEmail(IFooter that) { return that.GetPropertyValue<string>("email"); }
+
+		///<summary>
+		/// Facebook: stas facebook link
+		///</summary>
+		[ImplementPropertyType("facebook")]
+		public string Facebook
+		{
+			get { return GetFacebook(this); }
+		}
+
+		/// <summary>Static getter for Facebook</summary>
+		public static string GetFacebook(IFooter that) { return that.GetPropertyValue<string>("facebook"); }
+
+		///<summary>
+		/// Phone number: telefoon nummer
+		///</summary>
+		[ImplementPropertyType("phoneNumber")]
+		public string PhoneNumber
+		{
+			get { return GetPhoneNumber(this); }
+		}
+
+		/// <summary>Static getter for Phone number</summary>
+		public static string GetPhoneNumber(IFooter that) { return that.GetPropertyValue<string>("phoneNumber"); }
+
+		///<summary>
+		/// Vimeo: stas vimeo link
+		///</summary>
+		[ImplementPropertyType("vimeo")]
+		public string Vimeo
+		{
+			get { return GetVimeo(this); }
+		}
+
+		/// <summary>Static getter for Vimeo</summary>
+		public static string GetVimeo(IFooter that) { return that.GetPropertyValue<string>("vimeo"); }
 	}
 
 	/// <summary>Folder</summary>

@@ -2,8 +2,13 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "Master.cshtml";
+   string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
 }
-<section id="about_banner">
+
+<section id="about_banner" style=" background-image: url('@bannerImageUrl')";
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 400px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 col-sm-offset-1">
@@ -135,7 +140,21 @@
     </div>
 </section>
 
-@{ Html.RenderPartial("Content/_CTABannerABT");}
+<section id="cta-banner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+
+                <h2 class="cta-text">Want to know what STAS can do for u?</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-5 col-xs-">
+                <button class="btn btn-white" data-toggle="modal" data-target="#exampleModalCenter">LET'S GET IN TOUCH</button>
+            </div>
+        </div>
+    </div>
+</section>
 @{ Html.RenderPartial("Content/_CTAProccessing");}
 
 @{ Html.RenderPartial("Content/_ContactBanner");}

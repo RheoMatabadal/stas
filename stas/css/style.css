@@ -312,44 +312,12 @@ ul, ul li {
 }
 
 /*corporate page stylesheet*/
-#corporate_banner{
-	background-image: url('../img/corporateBanner.jpg');
-	background-size: cover;
-	/*background-repeat: no-repeat;*/
-	min-height: 400px;
-	margin-top:0px;
-	max-width:100%;
-}
-#graphic_banner{
-	background-image: url('../img/graphicsbanner.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	min-height: 400px;
-}
-#film_banner{
-	background-image: url('../img/filmBanner.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	min-height: 450px;
-}
-#event_banner{
-	background-image: url('../img/eventsBanner.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	min-height: 400px;
-}
-#portfolio_banner{
-	background-image: url('../img/pattern_banner.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	min-height: 400px;
-}
-#about_banner{
-	background-image: url('../img/aboutBanner.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	min-height: 400px;
-}
+
+
+
+
+
+
 .card-white{
 	background-color: #fff;
 	border-radius: 0px;
