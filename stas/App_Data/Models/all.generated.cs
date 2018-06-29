@@ -8,8 +8,13 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
+<<<<<<< HEAD
 [assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "cdc91886c994bea5")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+=======
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "eaaf80551d69b1aa")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
+>>>>>>> a80a7344c17e4fa7549617e2bb9e8b18cfa93892
 
 
 // FILE: models.generated.cs
@@ -189,6 +194,7 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return this.GetPropertyValue<IPublishedContent>("homeLandingImage"); }
 		}
+<<<<<<< HEAD
 
 		///<summary>
 		/// email: email for footer
@@ -225,6 +231,8 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return Umbraco.Web.PublishedContentModels.Footer.GetVimeo(this); }
 		}
+=======
+>>>>>>> a80a7344c17e4fa7549617e2bb9e8b18cfa93892
 	}
 
 	/// <summary>About STAS</summary>
@@ -307,6 +315,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+<<<<<<< HEAD
 		/// Contact link: link om naar de contact form te gaan
 		///</summary>
 		[ImplementPropertyType("contactLink")]
@@ -316,6 +325,8 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+=======
+>>>>>>> a80a7344c17e4fa7549617e2bb9e8b18cfa93892
 		/// cta Image: foto voor de call to action banner
 		///</summary>
 		[ImplementPropertyType("ctaImage")]
@@ -629,6 +640,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+<<<<<<< HEAD
 		/// Contact link: link om naar de contact form te gaan
 		///</summary>
 		[ImplementPropertyType("contactLink")]
@@ -638,6 +650,8 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+=======
+>>>>>>> a80a7344c17e4fa7549617e2bb9e8b18cfa93892
 		/// cta Image: foto voor de call to action banner
 		///</summary>
 		[ImplementPropertyType("ctaImage")]
@@ -745,6 +759,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+<<<<<<< HEAD
 		/// Contact link: link om naar de contact form te gaan
 		///</summary>
 		[ImplementPropertyType("contactLink")]
@@ -754,6 +769,8 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+=======
+>>>>>>> a80a7344c17e4fa7549617e2bb9e8b18cfa93892
 		/// cta Image: foto voor de call to action banner
 		///</summary>
 		[ImplementPropertyType("ctaImage")]
@@ -1159,9 +1176,12 @@ namespace Umbraco.Web.PublishedContentModels
 	/// <summary>cta Banner</summary>
 	public partial interface ICtaBanner : IPublishedContent
 	{
+<<<<<<< HEAD
 		/// <summary>Contact link</summary>
 		Umbraco.Web.Models.RelatedLinks ContactLink { get; }
 
+=======
+>>>>>>> a80a7344c17e4fa7549617e2bb9e8b18cfa93892
 		/// <summary>cta Image</summary>
 		IPublishedContent CtaImage { get; }
 	}
@@ -1192,6 +1212,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+<<<<<<< HEAD
 		/// Contact link: link om naar de contact form te gaan
 		///</summary>
 		[ImplementPropertyType("contactLink")]
@@ -1204,6 +1225,8 @@ namespace Umbraco.Web.PublishedContentModels
 		public static Umbraco.Web.Models.RelatedLinks GetContactLink(ICtaBanner that) { return that.GetPropertyValue<Umbraco.Web.Models.RelatedLinks>("contactLink"); }
 
 		///<summary>
+=======
+>>>>>>> a80a7344c17e4fa7549617e2bb9e8b18cfa93892
 		/// cta Image: foto voor de call to action banner
 		///</summary>
 		[ImplementPropertyType("ctaImage")]
@@ -1216,6 +1239,7 @@ namespace Umbraco.Web.PublishedContentModels
 		public static IPublishedContent GetCtaImage(ICtaBanner that) { return that.GetPropertyValue<IPublishedContent>("ctaImage"); }
 	}
 
+<<<<<<< HEAD
 	// Mixin content Type 2143 with alias "footer"
 	/// <summary>footer</summary>
 	public partial interface IFooter : IPublishedContent
@@ -1307,6 +1331,8 @@ namespace Umbraco.Web.PublishedContentModels
 		public static string GetVimeo(IFooter that) { return that.GetPropertyValue<string>("vimeo"); }
 	}
 
+=======
+>>>>>>> a80a7344c17e4fa7549617e2bb9e8b18cfa93892
 	/// <summary>Folder</summary>
 	[PublishedContentModel("Folder")]
 	public partial class Folder : PublishedContentModel

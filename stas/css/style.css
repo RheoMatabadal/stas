@@ -36,7 +36,7 @@ body{
     border-radius: 0px;
     position: absolute;
     background: transparent;
-    margin-top: 400px;
+    margin-top: -225px;
     /*font-size:33px;*/
 
   	}
@@ -66,7 +66,7 @@ body{
 	font-size: 15px;
 }
 .about-image{
-	max-height: auto;
+	max-height: auto    ;
 	max-width: auto;
 	height: 125px;
 	width: 125px;
@@ -89,13 +89,11 @@ h1{
 		/*color: black;*/
 	}
 
-#home{
-		/*padding-top: 50px;*/
-	min-height:700px;
-	color: #fff;
-	background:url('../img/ctaBanner.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
+#home {
+    
+   
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #about {
@@ -104,10 +102,9 @@ h1{
 	color: #FFFFFF;
 	background-color: #000000 ;
 	}
-#corporate {
-  	/*padding-top:50px;
-    color: #fff;
-  	background-color:#9B988D;*/
+#corporate-text {
+    background-color:white !important;
+    
   	  }
 
 .amanah{
@@ -311,11 +308,15 @@ ul, ul li {
   padding: 0;
 }
 
+<<<<<<< HEAD
 /*corporate page stylesheet*/
+=======
+>>>>>>> a80a7344c17e4fa7549617e2bb9e8b18cfa93892
 
 
 
 
+<<<<<<< HEAD
 
 
 .card-white{
@@ -336,13 +337,48 @@ ul, ul li {
 	border-radius: 0px;
 	padding-top: 2px;
 	padding-left: 25px;
-    padding-bottom: 10px;
-	/*margin-left: 35px;*/
-	/*text-align: center;*/
-	color:white;
-	font-weight: bolder!important;
-	margin-bottom:100px;
+=======
+#portfolio_banner{
+	background-image: url('../img/pattern_banner.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 400px;
 }
+
+.banner-image {
+    height: 650px;
+    width: 100%;
+    position:relative;
+    display:block;
+}
+.card-white {
+    background-color: #fff;
+    border-radius: 0px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+    /* text-align: center; */
+    margin-top: -375px;
+    font-weight: bolder !important;
+    color: #404548;
+    padding-left: 25px;
+>>>>>>> a80a7344c17e4fa7549617e2bb9e8b18cfa93892
+    padding-bottom: 10px;
+}
+.card-dark 
+{
+    background-color: #404548;
+    border-radius: 0px;
+    padding-top: 2px;
+    padding-left: 25px;
+    padding-bottom: 10px;
+    margin-top: -300px;
+    /* margin-left: 35px; */
+    /* text-align: center; */
+    color: white;
+    font-weight: bolder !important;
+    /* margin-bottom: 719px; */
+    }
+
 
 #gallery{
 	min-height: 10px;
@@ -427,17 +463,30 @@ padding-bottom: 10px;
 }
 
 #cta-banner{
+<<<<<<< HEAD
 		
 }
 #film-cta-banner{
 	
+=======
+	
+	min-height:600px;
+	height: 100%;
+	width: 100%;	
 }
-.cta-text{
-	color:white;
-	margin-top:275px;
-	margin-left: 75px;
-	margin-bottom:30px;
-	margin-right: 30px;
+
+.cta-text {
+    color: white;
+    margin-top: -419px;
+    margin-left: 75px;
+    /* margin-bottom: -1470px; */
+    /* margin-right: 734px; */
+    /* position: absolute; */
+    color: white;
+>>>>>>> a80a7344c17e4fa7549617e2bb9e8b18cfa93892
+}
+.cta-button {
+    margin-top: -700px;
 }
 
 #loadMore {
@@ -470,6 +519,8 @@ padding-bottom: 10px;
 .event-text{
 	text-align: center;
 	font-weight: bolder;
+    display:block;
+    position:relative;
 }
 /* carousel */
 #quote-carousel 
@@ -710,8 +761,8 @@ padding-left: 50px;
 }
 .container-fluid-no-pad{
 
-    /* padding-right: 15px; */
-    /* padding-left: 15px; */
+    padding-right: 0px; 
+    padding-left: 0px;
     margin-right: auto;
     margin-left: auto;
 
@@ -1158,4 +1209,16 @@ top: 0px;
   left: 0;
   width: 100%;
   height: 100%;
+}
+.home-image{
+    width:100%;
+    max-height:700px;
+    position:relative;
+}
+.scroll-down p {
+    font-weight: bolder;
+    font-size: 12px;
+    margin-left: -290px;
+    margin-top: -80px;
+    color: white;
 }

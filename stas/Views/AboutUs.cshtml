@@ -2,6 +2,7 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "Master.cshtml";
+<<<<<<< HEAD
    string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
    string CTAImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("ctaImage").Url;
 }
@@ -11,7 +12,17 @@
         background-repeat: no-repeat;
         min-height: 400px;">
     <div class="container-fluid">
+=======
+    string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
+    string CTAImageURL = Model.Content.GetPropertyValue<IPublishedContent>("ctaImage").Url;
+
+
+}
+<section id="about_banner">
+    <div class="container-fluid-no-pad">
+>>>>>>> a80a7344c17e4fa7549617e2bb9e8b18cfa93892
         <div class="row">
+            <img src="@bannerImageUrl" class="img-responsive banner-image"  />
             <div class="col-md-6 col-sm-offset-1">
                 <div class="card">
                     <div class="card-body card-white">
@@ -141,6 +152,7 @@
     </div>
 </section>
 
+<<<<<<< HEAD
 <section id="cta-banner" style="background-image: url('@CTAImageUrl');
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -149,6 +161,13 @@
 	width: 100%;">
     <div class="container-fluid">
         <div class="row">
+=======
+<section id="cta-banner">
+    <div class="container-fluid">
+
+        <div class="row">
+            <img src="@CTAImageURL" class="img-responsive banner-image" />
+>>>>>>> a80a7344c17e4fa7549617e2bb9e8b18cfa93892
             <div class="col-md-6 col-sm-12 col-xs-12">
 
                 <h2 class="cta-text">Want to know what STAS can do for u?</h2>
@@ -156,7 +175,11 @@
         </div>
         <div class="row">
             <div class="col-md-6 col-sm-5 col-xs-">
+<<<<<<< HEAD
                 <button class="btn btn-white" data-toggle="modal" data-target="#exampleModalCenter">LET'S GET IN TOUCH</button>
+=======
+                <button class="btn btn-white cta-button" data-toggle="modal" data-target="#exampleModalCenter">LET'S GET IN TOUCH</button>
+>>>>>>> a80a7344c17e4fa7549617e2bb9e8b18cfa93892
             </div>
         </div>
     </div>
