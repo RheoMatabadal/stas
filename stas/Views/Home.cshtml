@@ -157,7 +157,7 @@
                             <textarea class="form-control half" id="MessageField" rows="3" placeholder="Message(required)" required="required"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control hidden" id="ToEmail" value="rheo.matabadal.natin@gmail.com"/>
+                            <input type="text" class="form-control hidden" id="ToEmail" value="@Umbraco.Field("contactEmail")"/>
                         </div>
                     </form>
             </div>
@@ -194,6 +194,8 @@
                     alert(errMsg);
                 }
             });
+            $('#exampleModalCenter').modal('hide');
+
         });
     });
     
