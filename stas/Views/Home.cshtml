@@ -2,9 +2,41 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "Master.cshtml";
+    string homeLandingImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("homeLandingImage").Url;
 }
 
-@{ Html.RenderPartial("Content/_Home");}
+
+<style>
+
+
+</style>
+<section id="home" >
+    <div class="container-fluid-no-pad">
+        <img src="@homeLandingImageUrl" class="img-fluid home-image" alt="Alternate Text" />
+        <div class="row">
+            <div class="col-md-4  col-md-offset-2">
+
+                <div class="panel panel-default panel-stas">
+                    <div class="panel-body panel-stas-body hvr-wobble-horizontal">  @Umbraco.Field("homeBannerText")</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-2">
+                    <div class="scroll-down">
+
+                        <a class="ct-btn-scroll ct-js-btn-scroll scroll-a hvr-sink whitener" href="#about"></a>
+                        <p>SCROLL DOWN</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</section>
 <section id="about">
 
     <div class="container">

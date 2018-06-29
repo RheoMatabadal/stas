@@ -2,7 +2,11 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "Master.cshtml";
+<<<<<<< HEAD
      string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
+=======
+    string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
+>>>>>>> a80a7344c17e4fa7549617e2bb9e8b18cfa93892
 }
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -14,6 +18,7 @@
         max-width: 100%;">
     <div class="container-fluid">
         <div class="row">
+            <img src="@bannerImageUrl" class="img-responsive banner-image" />
             <div class="col-md-6 col-sm-offset-1">
                 <div class="card">
                     <div class="card-body card-white">
@@ -37,7 +42,7 @@
         </div>
     </div>
 </section>
-
+<section id="corporate-text">
 <div class="container">
     <!-- Example row of columns -->
     <div class="row">
@@ -63,7 +68,9 @@
 
 
 
-</div> <!-- /container -->
+</div>
+    </section>
+    <!-- /container -->
 <section id="gallery">
     <div class="container-fluid">
         <div class="row">

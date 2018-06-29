@@ -50,7 +50,7 @@
   color: white !important;
   font-size: 48px;
   transition: all 0.3s ease-in-out;
-  margin-top: 600px;
+  margin-top:4px;
     margin-left: -250px;
 }
 
@@ -68,7 +68,7 @@
 font-weight: bolder;
 font-size:12px;
 margin-left: -290px;
-padding-top: 575px;
+padding-top: -200px;
 }
 
 
