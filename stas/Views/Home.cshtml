@@ -3,6 +3,7 @@
 @{
     Layout = "Master.cshtml";
     string homeLandingImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("homeLandingImage").Url;
+    string artistImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("artistImage").Url;
 }
 
 <section id="home" style="min-height: 700px;
@@ -162,8 +163,8 @@
                     </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id="submit-contact" class="btn btn-dark pull-left hvr-pulse-grow"><i class="fab fa-telegram-plane"></i> Send Message</button>
-                <a id="send-form" class="btn btn-dark pull-left hvr-pulse-grow" href="#">Send</a>
+         
+                <a id="send-form" class="btn btn-dark pull-left hvr-pulse-grow" href="#"><i class="fab fa-telegram-plane"></i>Send message</a>
             </div>
         </div>
     </div>

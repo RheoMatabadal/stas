@@ -1,4 +1,4 @@
-﻿@inherits UmbracoViewPage
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 <div class="vl" id="vl" onclick="openArt()">
     <p>FEATURED ARTIST: @Umbraco.Field("artistName", casing: RenderFieldCaseType.Upper)</p>
 </div>
@@ -47,7 +47,7 @@
 
 
                 <div class="col-md-2 col-sm-12 col-xs-12 artist">
-                    <img src="~/img/artist.jpg" class="img-fluid hvr-grow" alt="artist">
+                    <img src="@Umbraco.Field("artistImageUrl")" class="img-fluid hvr-grow" alt="artist">
 
                     <p class="about-artist">ABOUT THE ARTIST</p>
 
