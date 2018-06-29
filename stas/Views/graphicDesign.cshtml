@@ -3,6 +3,7 @@
 @{
     Layout = "Master.cshtml";
     string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
+    string CTAImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("ctaImage").Url;
 }
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <section id="graphic_banner" style=" background-image: url('@bannerImageUrl');
@@ -134,7 +135,26 @@
         </div>
     </div>
 </section>
-@{ Html.RenderPartial("Content/_CTABannerGraphic");}
+<section id="cta-banner" style="background-image: url('@CTAImageUrl');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height:600px;
+	height: 100%;
+	width: 100%;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+
+                <h2 class="cta-text">Want to know what STAS can do for u?</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-5 col-xs-">
+                <button class="btn btn-white" data-toggle="modal" data-target="#exampleModalCenter">LET'S GET IN TOUCH</button>
+            </div>
+        </div>
+    </div>
+</section>
   @{ Html.RenderPartial("Content/_CTAProccessing");}
 
 

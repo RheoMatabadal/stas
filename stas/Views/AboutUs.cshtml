@@ -3,6 +3,7 @@
 @{
     Layout = "Master.cshtml";
    string bannerImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage").Url;
+   string CTAImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("ctaImage").Url;
 }
 
 <section id="about_banner" style=" background-image: url('@bannerImageUrl')";
@@ -140,7 +141,12 @@
     </div>
 </section>
 
-<section id="cta-banner">
+<section id="cta-banner" style="background-image: url('@CTAImageUrl');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height:600px;
+	height: 100%;
+	width: 100%;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 col-sm-12 col-xs-12">
