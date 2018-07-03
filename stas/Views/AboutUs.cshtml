@@ -41,6 +41,21 @@
 <section id="onder-banner">
     <div class="container-fluid-no-pad">
         <div class="row no-pad">
+            
+@{
+	var selection = Model.Content.Site().Children("aboutUs")
+						.Where(x => x.IsVisible())
+						.Where(x => x.Name == "onderBannerFotos");
+}
+<ul>
+	@foreach(var item in selection){
+		<li>
+			<a href="@item.Url">@item.Name</a>
+		</li>
+	}
+</ul>
+
+
             <div class="col-md-3">
                 <img src="~/img/abt_corporate.jpg" class="img-responsive gallery hvr-grow">
             </div>

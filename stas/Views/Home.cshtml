@@ -4,7 +4,9 @@
     Layout = "Master.cshtml";
     string homeLandingImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("homeLandingImage").Url;
     string artistImageUrl = Model.Content.GetPropertyValue<IPublishedContent>("artistImage").Url;
-}
+    IEnumerable<IPublishedContent> abtSectionImages = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>("aboutImages");
+}   
+
 
 <section id="home" style="min-height: 700px;
     color: #fff;
@@ -36,6 +38,7 @@
 
 
 </section>
+
 <section id="about">
 
     <div class="container">
@@ -55,15 +58,19 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-2">
-                <img class="img-fluid hvr-bounce-in" src="~/img/karin.jpg" alt="emp">
-            </div>
-            <div class="col-sm-2">
-                <img class="img-fluid hvr-bounce-in" src="~/img/kenzo.jpg" alt="emp">
-            </div>
-            <div class="col-sm-2">
-                <img class="img-fluid hvr-bounce-in" src="~/img/charlene.jpg" alt="emp">
-            </div>
+            @if (abtSectionImages != null && abtSectionImages.Count() > 0)
+    {
+        <div class="col-sm-2">
+            <img class="img-fluid hvr-bounce-in" src="@(abtSectionImages.First().Url)?width=150&height=150&mode=crop" alt="emp">
+        </div>
+        foreach(IPublishedContent image in abtSectionImages.Skip(1)){
+             <div class="col-sm-2">
+            <img class="img-fluid hvr-bounce-in" src="@(image.Url)?width=150&height=150&mode=crop" alt="emp">
+        </div>
+            }
+
+}
+
             <div class="col-sm-2">
                 <div class="leer-ons-kennen hvr-forward">
                     <a href="about.html" class="leer-ons-kennen">LEER ONS KENNEN <img src="~/img/down-arrow.png" alt="leeronskennen"> </a>

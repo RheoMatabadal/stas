@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "8e9695edc6e85b43")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c8168d1c6bb37591")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -288,6 +288,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString AboutTextCol2
 		{
 			get { return this.GetPropertyValue<IHtmlString>("aboutTextCol2"); }
+		}
+
+		///<summary>
+		/// Fotos Onder Banner: de foto's onder de banner op de about us pagina
+		///</summary>
+		[ImplementPropertyType("fotosOnderBanner")]
+		public IEnumerable<IPublishedContent> FotosOnderBanner
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("fotosOnderBanner"); }
 		}
 
 		///<summary>
